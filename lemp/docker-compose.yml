@@ -1,0 +1,18 @@
+nginx:
+    image: tutum/nginx
+    ports:
+        - "8080:80"
+    links:
+        - phpfpm
+    volumes: 
+        - ./logs/nginx-error.log:/var/log/nginx/error.log
+        - ./logs/nginx-access.log:/var/log/nginx/access.log
+        - ./nginx/default:/etc/nginx/sites-available/default
+        - ./nginx/default:/etc/nginx/sites-enabled/default
+
+phpfpm:
+    image: php:fpm
+    ports:
+        - "9000:9000"
+    volumes:
+        - ./public:/usr/share/nginx/html
