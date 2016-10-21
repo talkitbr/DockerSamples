@@ -11,8 +11,28 @@ nginx:
         - ./nginx/default:/etc/nginx/sites-enabled/default
 
 phpfpm:
-    image: php:fpm
+    dockerfile: Dockerfile.mysql
+    build: ./
     ports:
         - "9000:9000"
     volumes:
         - ./public:/usr/share/nginx/html
+
+mysql:
+    image: mariadb
+    ports: 
+        - 3306:3306
+    environment:
+        MYSQL_ROOT_PASSWORD: admin
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+        - mysql:db
+    ports:
+        - 8183:80
+    environment:
+        MYSQL_USERNAME: root
+        MYSQL_ROOT_PASSWORD: admin    
+        PMA_ARBITRARY: 0
