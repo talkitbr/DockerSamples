@@ -21,7 +21,7 @@ A composição de containers no Docker é feita usando o comando <code>docker-co
 
 <li>Voltando para o Explorer do Visual Studio Code, crie o arquivo <code>docker-compose.yml</code>. Nele vamos incluir as imagens que iremos usar. Vamos começar com a imagem <a href="https://hub.docker.com/r/tutum/nginx/" target="_blank">tutum/nginx</a>:
 
-[code language="javascript"]
+<code language="javascript">
 nginx:
     image: tutum/nginx
     ports:
@@ -29,7 +29,7 @@ nginx:
     volumes: 
         - ./logs/nginx-error.log:/var/log/nginx/error.log
         - ./logs/nginx-access.log:/var/log/nginx/access.log
-[/code]
+</code>
 
 <blockquote>Note que estamos mapeando a porta 8080 de nossa máquina para a porta 80 do container. Além disso, estamos mapeando dois arquivos locais (<code>nginx-error.log</code> e <code>nginx-access.log</code> para conseguir obter informações de log do servidor, já que esses arquivos são os usados por default pelo nginx para escrever os logs.</blockquote></li>
 
@@ -42,11 +42,11 @@ nginx:
 <li>
 Já no prompt de comando, execute o comando <code>docker-compose up -d</code>. Esse comando já fará o download (pull) da imagem do tutum/nginx, se ele ainda não estiver presente localmente, e depois irá iniciar o Container. 
 
-<h2><pre style="-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#202020;border:4px solid silver;border-radius:5px;box-shadow:2px 2px 3px #6e6e6e;color:#e2e2e2;display:block;font:.5em 'andale mono', 'lucida console', monospace;line-height:1em;overflow:auto;padding:15px;margin-bottom:10px;">
+<pre style="-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#202020;border:4px solid silver;border-radius:5px;box-shadow:2px 2px 3px #6e6e6e;color:#e2e2e2;display:block;font:.5em 'andale mono', 'lucida console', monospace;line-height:1em;overflow:auto;padding:15px;margin-bottom:10px;">
 C:\docker\lemp&gt;docker-compose up -d
 Creating lemp_nginx_1
 
-C:\docker\lemp&gt;</pre></h2>
+C:\docker\lemp&gt;</pre>
 
 <blockquote>Um erro comum que pode ocorrer aqui é <code>Bind for 0.0.0.0:8080 failed</code> (será o caso de quem acabou de seguir os passos do artigo anterior). Esse erro ocorre quando já temos alguma aplicação usando a porta TCP que fornecemos (nesse caso a porta 8080). E essa aplicação pode inclusive ser um container docker. Para verificar os containers docker em execução, execute o comando <code>docker ps</code> e para parar um container que está em execução, execute o comando <code>docker stop</code> fornecendo o nome ou ID do container. Depois de liberada a porta 8080, tente executar novamente o comando <code>docker-compose up -d</code>.</blockquote>
 
@@ -69,26 +69,28 @@ Agora vamos começar a usar outros recursos do docker-composer como a definiçã
 <ol>
 <li>Inclua a definição do novo container php no final do mesmo arquivo docker-compose.yml:
 
-[code language="javascript"]
+<code language="javascript">
 phpfpm:
     image: php:fpm
     ports:
         - "9000:9000"
     volumes:
         - ./public:/usr/share/nginx/html
-[/code]
+</code>
 <blockquote>Notem que compartilhamos a pasta local <code>public</code> na pasta <code>/usr/share/nginx/html</code> do container.</blockquote>
 </li>
 
 <li>Crie a pasta public na raiz da pasta aberta no Visual Studio Code e dentro dela o arquivo index php a seguir:
-[code language="php"]
+
+<code language="php">
 <?php
 phpinfo();
-[/code]
+</code>
+
 </li>
 <li>De volta no arquivo <code>docker-composer.yml</code> e inclua, no container nginx, o link para o container phpfpm e dois novos volumes compartilhando pastas locais onde iremos incluir arquivo de configuração do servidor (necessário para configurar o PHP no nginx):
 
-[code language="javascript" highlight="5,6,10,11"]
+<code language="javascript">
 nginx:
     image: tutum/nginx
     ports:
@@ -100,12 +102,13 @@ nginx:
         - ./logs/nginx-access.log:/var/log/nginx/access.log
         - ./nginx/default:/etc/nginx/sites-available/default
         - ./nginx/default:/etc/nginx/sites-enabled/default
-[/code]
+</code>
+
 <blockquote>O link é que permite a comunicação entre os dois containers. Se não for especificado, os container não irão enxergar um ao outro.</blockquote>
 </li>
 <li>Agora vamos adicionar o arquivo de configuração do nginx. Crie a pasta <code>nginx</code> na raiz da sua pasta aberta no Visual Studio Code. Dentro da pasta <code>nginx</code> crie o arquivo <code>default</code> com o seguinte conteúdo:
 
-[code language="javascript"]
+<code language="javascript">
 server {
     listen  80;
 
@@ -128,7 +131,7 @@ server {
         include fastcgi_params;
     }
 }
-[/code]
+</code>
 <blockquote>
 <strong>Notas:</strong>
 <ul>
