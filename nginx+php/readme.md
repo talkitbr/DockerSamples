@@ -165,11 +165,7 @@ Pronto, os containers já estão no ar e podemos testá-los acessando <code>http
 
 <a href="https://talkitbr.files.wordpress.com/2016/10/docker_3_browser_php.png" target="_blank"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_3_browser_php.png" alt="docker_3_browser_php" width="667" height="350" class="aligncenter size-full wp-image-9150" /></a>
 
-Você pode conferir o código completo desse artigo no <a href="https://github.com/talkitbr/DockerSamples/tree/master/nginx%2Bphp" target="_blank">repositório Git do TalkitBR</a>.
-
 <h3>Próximos Passos</h3>
-Apresentei nesse artigo como criar e configurar um servidor nginx para publicar arquivos PHP. Contudo tivemos que incluir outro container PHP para disponibilizar a engine PHP para o nginx. Para os próximos artigos iremos explorar outras possibilidades do Docker, como:
-- A partir do que criamos aqui, criar containers para acessar banco de dados MySQL.
-- Criar imagens personalizadas e subir no nosso Docker Registry (registro de imagens Docker) para posteriormente compartilhar com outras pessoas.
+Apresentei nesse tutorial como criar e configurar um servidor nginx para publicar arquivos PHP. Contudo tivemos que incluir outro container PHP para disponibilizar a engine PHP para o nginx.
 
 E fiquem a vontade para sugerir exemplos para demonstrarmos aqui. Abraços e até a próxima.
