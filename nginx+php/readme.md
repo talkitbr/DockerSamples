@@ -1,12 +1,8 @@
-<div style="float: right">
-<a href="https://talkitbr.files.wordpress.com/2016/10/docker_3_compose.png" target="_blank"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_3_compose.png?w=300" alt="docker_3_compose" width="300" height="295" class="alignright size-medium wp-image-9128" /></a>
-</div>
+O conteúdo disponível nesta pasta é parte de uma série de artigos em que descrevo como desenvolver no Windows 10 usando Docker. <link href="https://talkitbr.com/?s=%22Usando+Docker+no+Windows+10%22" target="_blank">Clique aqui para acessar os artigos</a>.
 
-Neste tutorial demonstrarei um passo a passo de como preparar um ambiente de desenvolvimento com nginx e PHP usando Docker no Windows 10. O tutorial faz parte de uma série de artigos que publiquei sobre este assunto no blog do TalkitBR.
+Neste tutorial demonstrarei um passo a passo de como preparar um ambiente de desenvolvimento Linux/Nginx/PHP usando Docker no Windows 10. O tutorial faz parte de uma série de artigos que publiquei sobre este assunto no blog do TalkitBR e foi baseado <a href="http://www.penta-code.com/creating-a-lemp-stack-with-docker-compose/" target="_blank">no post de YONGZHI HUANG que demonstra como criar LEMP stack no Docker.</a>
 
-Vamos ver aqui como realizar composição de containers Docker que interagem entre si. O tutorial foi baseado <a href="http://www.penta-code.com/creating-a-lemp-stack-with-docker-compose/" target="_blank">no post de YONGZHI HUANG que demonstra como criar LEMP stack no Docker.</a>
-
-A composição de containers no Docker é feita usando o comando <code>docker-compose</code> que permite definir e rodar aplicações que envolvem múltiplos containers, com compartilhamento de recursos entre eles e também outras funcionaldiades como a escalabilidade.
+Para isso iremos usar composição de containers no Docker, que é feita usando o comando <code>docker-compose</code>. Ela permite definir e rodar aplicações que envolvem múltiplos containers, com compartilhamento de recursos entre eles e também com outras funcionaldiades como a escalabilidade.
 
 <blockquote style="clear:both">Se desejar, você pode baixar o conteúdo completo que está disponível nesta mesma pasta.</blockquote>
 
@@ -168,4 +164,4 @@ Pronto, os containers já estão no ar e podemos testá-los acessando <code>http
 <h2>Próximos Passos</h2>
 Apresentei nesse tutorial como criar e configurar um servidor nginx para publicar arquivos PHP. Contudo tivemos que incluir outro container PHP para disponibilizar a engine PHP para o nginx.
 
-E fiquem a vontade para sugerir exemplos para demonstrarmos aqui. Abraços e até a próxima.
+Fiquem a vontade para sugerir exemplos para demonstrarmos aqui. Abraços e até a próxima.
