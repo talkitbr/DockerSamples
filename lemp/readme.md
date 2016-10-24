@@ -2,7 +2,7 @@ O conteúdo disponível nesta pasta é parte de uma série de artigos em que des
 
 Neste tutorial demonstrarei um passo a passo de como preparar um ambiente de desenvolvimento LEMP (Linux/Nginx/MySSQL/PHP) usando Docker no Windows 10. O tutorial faz parte de uma série de artigos que publiquei sobre este assunto no blog do TalkitBR e foi baseado <a href="http://www.penta-code.com/creating-a-lemp-stack-with-docker-compose/" target="_blank">no post de YONGZHI HUANG que demonstra como criar LEMP stack no Docker.</a>
 
-O que apresento aqui é uma continuidade de outro tutorial que demonstra como criar uma composição de containers Nginx/PHP disponível neste <a href="/talkitbr/DockerSamples/tree/master/nginx%2Bphp" target="_blank">link</a>. Recomenda-se fazer o outro tutorial antes de iniciar este.
+O que apresento aqui é uma continuidade de outro tutorial que demonstra como criar uma composição de containers Nginx/PHP disponível neste <a href="../nginx%2Bphp" target="_blank">link</a>. Recomenda-se fazer o outro tutorial antes de iniciar este.
 
 <blockquote style="clear:both">Se desejar, você pode baixar o conteúdo completo que está disponível nesta mesma pasta.</blockquote>
 
