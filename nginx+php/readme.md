@@ -1,4 +1,4 @@
-O conteúdo disponível nesta pasta é parte de uma série de artigos em que descrevo como desenvolver no Windows 10 usando Docker. <link href="https://talkitbr.com/?s=%22Usando+Docker+no+Windows+10%22" target="_blank">Clique aqui para acessar os artigos</a>.
+O conteúdo disponível nesta pasta é parte de uma série de artigos em que descrevo como desenvolver no Windows 10 usando Docker. <a href="https://talkitbr.com/?s=%22Usando+Docker+no+Windows+10%22" target="_blank">Clique aqui para acessar os artigos</a>.
 
 Neste tutorial demonstrarei um passo a passo de como preparar um ambiente de desenvolvimento Linux/Nginx/PHP usando Docker no Windows 10. O tutorial faz parte de uma série de artigos que publiquei sobre este assunto no blog do TalkitBR e foi baseado <a href="http://www.penta-code.com/creating-a-lemp-stack-with-docker-compose/" target="_blank">no post de YONGZHI HUANG que demonstra como criar LEMP stack no Docker.</a>
 
