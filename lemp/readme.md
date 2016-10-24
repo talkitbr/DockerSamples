@@ -60,6 +60,8 @@ phpmyadmin:
 
 <blockquote><strong>Notas: </strong><ul><li>Especificamos um link para o container mysql</li><li>Expomos o PHPMyAdmin na porta 8183 da nossa máquina local.</li><li>Definimos o usuário e senha para acesso ao servidor de banco de dados usando variáveis de ambiente.</li><li>Incluímos a variavel <a href="http://www.pinksterfeesten.info/phpmyadmin/doc/html/setup.html" target="_blank">PMA_ARBITRARY</a> com valor 0 para indicar que não vamos permitir fornecer o endereço do servidor de banco de dados no formulário de login (será usado o padrão localhost).</li></ul></blockquote> 
 </li>
+<li>Antes de prosseguir, garanta que você habilitou o compartilhamento do drive do seu computador no Docker (no meu caso o drive C:). Para verificar, acesse as configurações "Shared Drives" do Docker. Para mais detalhes, acesse o artigo <a href="https://talkitbr.com/2016/10/24/usando-docker-no-windows-10-parte-2/" target="_blank">Usando Docker no Windows 10: Parte 2</a>. Esse compartilhamento é necessário para permitir que o container acesse suas pastas locais.
+</li>
 <li>
 Vamos agora atualizar nossos containers no docker. Acesse novamente o prompt de comando a partir da pasta do nosso projeto e então execute o comando <code>docker-compose up -d</code>.
 

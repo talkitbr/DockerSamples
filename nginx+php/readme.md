@@ -11,9 +11,9 @@ Para isso iremos usar composição de containers no Docker, que é feita usando 
 <ol>
 <li>Vamos começar criando uma pasta para manter nossa aplicação além do arquivo que irá descrever a composição de containers. No meu caso irei criar a pasta em C:\docker\lemp</li>
 
-<li>Abrir essa pasta em um editor de arquivos. Aqui irei usar o <a href="/2016/08/18/consolidando-visual-studio-code/" target="_blank">Visual Studio Code</a> que extensões que permitem editar nosso arquivo docker-compose.yml.</li>
+<li>Abrir essa pasta em um editor de arquivos. Aqui irei usar o <a href="/2016/08/18/consolidando-visual-studio-code/" target="_blank">Visual Studio Code</a> pois ele possui uma extensão que permite editar nosso arquivo docker-compose.yml.</li>
 
-<li>Para facilitar a edição, vou usar uma extensão do Visual Studio Code. Acesse as extensões e então busque por "docker compose". Selecione a extensão "Dockerfile and Docker Compose File (yml)" e faça a instalação. Será solicitado o reinício do Visual Studio Code quando a instalação terminar.
+<li>Acesse a aba Extensões no Visual Studio Code e então busque por "docker compose". Selecione a extensão "Dockerfile and Docker Compose File (yml)" e faça a instalação. Será solicitado o reinício do Visual Studio Code quando a instalação terminar.
 
 <a href="https://talkitbr.files.wordpress.com/2016/10/docker_3_vscode_extension.png"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_3_vscode_extension.png?w=723" alt="docker_3_vscode_extension" width="723" height="426" class="aligncenter size-large wp-image-9131" /></a></li>
 
@@ -36,6 +36,8 @@ Para isso iremos usar composição de containers no Docker, que é feita usando 
 
 <a href="https://talkitbr.files.wordpress.com/2016/10/docker_3_vscode_dockercompose_12.png" target="_blank"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_3_vscode_dockercompose_12.png" alt="docker_3_vscode_dockercompose_1" width="723" height="401" class="aligncenter size-full wp-image-9139" /></a></li>
 
+<li>Antes de prosseguir, garanta que você habilitou o compartilhamento do drive do seu computador no Docker (no meu caso o drive C:). Para verificar, acesse as configurações "Shared Drives" do Docker. Para mais detalhes, acesse o artigo <a href="https://talkitbr.com/2016/10/24/usando-docker-no-windows-10-parte-2/" target="_blank">Usando Docker no Windows 10: Parte 2</a>. Esse compartilhamento é necessário para permitir que o container acesse suas pastas locais.
+</li>
 <li>
 Já no prompt de comando, execute o comando <code>docker-compose up -d</code>. Esse comando já fará o download (pull) da imagem do tutum/nginx, se ele ainda não estiver presente localmente, e depois irá iniciar o Container. 
 
@@ -98,7 +100,7 @@ phpinfo();
         - ./nginx/default:/etc/nginx/sites-enabled/default
 </code></pre>
 
-<blockquote>O link é que permite a comunicação entre os dois containers. Se não for especificado, os container não irão enxergar um ao outro.</blockquote>
+<blockquote>O link é que permite a comunicação entre os dois containers. Se não for especificado, um container não irá conseguir se comunicar com o outro.</blockquote>
 </li>
 <li>Agora vamos adicionar o arquivo de configuração do nginx. Crie a pasta <code>nginx</code> na raiz da sua pasta aberta no Visual Studio Code. Dentro da pasta <code>nginx</code> crie o arquivo <code>default</code> com o seguinte conteúdo:
 
@@ -129,7 +131,7 @@ phpinfo();
 <strong>Notas:</strong>
 <ul>
 <li>Nesta configuração estamos definindo a pasta raiz do servidor (root), os arquivos de boas vindas (index), o nome do servidor (server_name), como trataremos arquivos abertos na raiz (location /) e como iremos tratar arquivos .php (location ~ \.php$).</li>
-<li>O server_name especificado corresponde ao IP do nosso host Docker. É possível obter esse endereço através dos comandos docker-machine ls (para listar os hosts docker) e então <code>docker-machine ip [nome_docker_host]</code>.
+<li>O server_name especificado corresponde ao IP do nosso host Docker. É possível obter esse endereço através dos comandos docker-machine ls (para listar os hosts docker) e então <code>docker-machine ip [nome_docker_host]</code> (necessário executar a linha de comando com privilégios de administrador).
 
 <pre style="-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#202020;border:4px solid silver;border-radius:5px;box-shadow:2px 2px 3px #6e6e6e;color:#e2e2e2;display:block;font:.5em 'andale mono', 'lucida console', monospace;line-height:1em;overflow:auto;padding:15px;margin-bottom:10px;">
 c:\&gt;docker-machine ls
@@ -141,6 +143,7 @@ c:\&gt;docker-machine ip MobyLinuxVM
 10.0.75.2
 
 c:\&gt;</pre>
+</ul>
 </li>
 </ul>
 </blockquote>
