@@ -72,13 +72,12 @@ lemp_nginx_1 is up-to-date
 C:\docker\lemp&gt;</pre>
 <blockquote>Notem que os containers lemp_phpfpm_1 e lemp_nginx_1 não foram atualizados pois não fizemos modificação alguma neles. Já o lemp_mysql_1 e o lemp_phpmyadmin_1 foram criados e iniciados.</blockquote>
 </li>
-</ol>
-
+<li>
 Pronto, os containers já estão no ar e podemos testar o PHPMyAdmin acessando <code>http://localhost:8183/</code> ou ainda <code>http://127.0.0.1:8183/index.php</code> e usar o usuário <em>ROOT</em> com senha <em>admin</em> para acessar o servidor de banco de dados:
 
 <a href="https://talkitbr.files.wordpress.com/2016/10/docker_4_phpmyadmin_mysql.png"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_4_phpmyadmin_mysql.png" alt="docker_4_phpmyadmin_mysql" width="723" height="436" class="aligncenter size-full wp-image-9163" /></a>
-
-E para demonstrar acesso do PHP ao MySQL, precisamos criar um banco de dados de teste. Ainda no PHPMyAdmin, acesse a aba SQL e especifique o seguinte código SQL e então execute o código (botão "Go"):
+</li>
+<li>Vamos criar nosso banco de dados. Ainda no PHPMyAdmin, acesse a aba SQL e especifique o seguinte código SQL e então execute o código (botão "Go"):
 <pre><code language="sql">
 CREATE DATABASE docker_sample;
 
@@ -98,6 +97,8 @@ INSERT INTO users (name, email) values ('maria', 'maria@email.com');
 <a href="https://talkitbr.files.wordpress.com/2016/10/docker_4_phpmyadmin_newdb1.png" target="_blank"><img src="https://talkitbr.files.wordpress.com/2016/10/docker_4_phpmyadmin_newdb1.png" alt="docker_4_phpmyadmin_newdb" width="723" height="535" class="aligncenter size-full wp-image-9166" /></a>
 
 Como resultado, o PHPMyAdmin deve informar que o banco de dados foi criado com sucesso, criar a tabela <code>users</code> e inserir os usuários "joao" e "maria".
+</li>
+</ol>
 
 ### Acessando o banco de dados do container PHP
  
